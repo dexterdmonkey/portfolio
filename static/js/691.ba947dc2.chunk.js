@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkportfolio=self.webpackChunkportfolio||[]).push([[691],{691:(e,s,i)=>{i.r(s),i.d(s,{default:()=>t});i(43);var n=i(579);const t=()=>(0,n.jsx)("div",{children:(0,n.jsx)("div",{className:"flex justify-center items-center min-h-screen bg-white",children:"This is Landing"})})}}]);
+//# sourceMappingURL=691.ba947dc2.chunk.js.map

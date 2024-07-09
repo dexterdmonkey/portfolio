@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkportfolio=self.webpackChunkportfolio||[]).push([[58],{58:(e,s,i)=>{i.r(s),i.d(s,{default:()=>r});i(43);var t=i(579);const r=()=>(0,t.jsx)("div",{className:"flex justify-center items-center min-h-screen bg-white",children:"This is Dashboard"})}}]);
+//# sourceMappingURL=58.8c2292ea.chunk.js.map
