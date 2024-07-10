@@ -6,7 +6,8 @@ const LoginPage: React.FC = () => {
   const [username, setUsername] = useState<string>("");
   const [password, setPassword] = useState<string>("");
 
-  const handleLogin = () => {
+  const handleLogin = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
     // Perform login logic here if needed
     // For demonstration, log username and password
     console.log("Username:", username);
@@ -19,7 +20,7 @@ const LoginPage: React.FC = () => {
     <div className="flex justify-center items-center min-h-screen bg-auto bg-white">
       <div className="bg-white p-8 rounded shadow-md w-full max-w-sm">
         <h2 className="text-2xl font-bold text-deceiver mb-6">Login</h2>
-        <form>
+        <form onSubmit={handleLogin}>
           <div className="mb-4">
             <label className="block mb-2" htmlFor="username">
               Username
@@ -30,6 +31,7 @@ const LoginPage: React.FC = () => {
               className="w-full p-2 border border-grey rounded"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
+              required
             />
           </div>
           <div className="mb-6">
@@ -42,12 +44,12 @@ const LoginPage: React.FC = () => {
               className="w-full p-2 border border-grey rounded"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
+              required
             />
           </div>
           <button
-            type="button"
+            type="submit"
             className="w-full bg-primary text-white py-2 px-4 rounded hover:bg-secondary transition-colors"
-            onClick={handleLogin}
           >
             Login
           </button>
