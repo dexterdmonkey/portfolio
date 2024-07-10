@@ -2,7 +2,7 @@ import React from "react";
 
 const DashboardPage: React.FC = () => {
   return (
-    <div className="flex justify-center items-center min-h-screen bg-white">
+    <div className="flex w-full justify-center items-center min-h-screen bg-white">
       This is Dashboard
     </div>
   );

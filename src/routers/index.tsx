@@ -1,32 +1,35 @@
 import React, { Suspense } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import NavbarComponent from "components/NavbarComponent";
+import LoadingComponent from "components/LoadingComponent";
 
 // Lazily import components
 const LandingPage = React.lazy(() => import("pages/LandingPage"));
 const LoginPage = React.lazy(() => import("pages/LoginPage"));
 const SignUpPage = React.lazy(() => import("pages/SignUpPage"));
-const DashboardPage = React.lazy(() => import("pages/DashboardPage"));
-const UserPage = React.lazy(() => import("pages/UserPages"));
+
+const DashboardRouters = React.lazy(() => import("routers/dashboard"));
 
 const Routers: React.FC = () => {
+  const location = useLocation();
+  const isDashboardRoute = location.pathname.startsWith("/dashboard");
+
   return (
-    <Suspense fallback={<div>Loading...</div>}>
-      <NavbarComponent />
+    <Suspense fallback={<LoadingComponent />}>
+      {!isDashboardRoute && <NavbarComponent />}
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/sign-up" element={<SignUpPage />} />
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/dashboard/*" element={<DashboardRouters />} />
         <Route
-          path="/dashboard"
+          path="*"
           element={
-            <Routes>
-              <Route path="/" element={<DashboardPage />} />
-              <Route path="/users/:id" element={<UserPage />} />
-            </Routes>
+            <div className="flex justify-center items-center min-h-screen">
+              404 Not Found
+            </div>
           }
         />
-        <Route path="*" element={<div>404 Not Found</div>} />
       </Routes>
     </Suspense>
   );

@@ -3,13 +3,15 @@ import { NavLink } from "react-router-dom";
 
 const NavbarComponent: React.FC = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
-
   const handleToggleNav = () => {
     setIsNavOpen(!isNavOpen);
   };
 
   const navList = (
-    <ul className="mt-2 mb-4 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
+    <ul
+      onClick={() => setIsNavOpen(false)}
+      className="mt-2 mb-4 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6"
+    >
       <li>
         <NavLink to="/" className="p-1 font-normal text-white">
           Home
@@ -54,7 +56,10 @@ const NavbarComponent: React.FC = () => {
       {isNavOpen && (
         <div className="lg:hidden">
           {navList}
-          <div className="flex flex-col items-center gap-x-1 p-4">
+          <div
+            onClick={() => setIsNavOpen(false)}
+            className="flex flex-col items-center gap-x-1 p-4"
+          >
             <NavLink className="w-full" to="/login">
               <button className="w-full text-sm text-white mb-2 py-2 px-4 border rounded-md">
                 Log In
