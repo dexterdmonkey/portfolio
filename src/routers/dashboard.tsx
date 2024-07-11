@@ -18,9 +18,9 @@ const Routers: React.FC = () => {
 
   return (
     <>
-      <div className="flex w-screen">
+      <div className="flex max-w-full">
         {isSideOpen && <SidebarComponent />}
-        <div className="w-[calc(screen-16rem)]">
+        <div className="w-full">
           <DashboardNavbarComponent onSideOpenChange={handleSideOpenChange} />
           <Routes>
             <Route path="/" element={<DashboardPage />} />

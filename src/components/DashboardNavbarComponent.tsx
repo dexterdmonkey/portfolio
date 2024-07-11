@@ -34,14 +34,19 @@ const DashboardNavbarComponent: React.FC<DashboardNavbarProps> = ({
   );
 
   return (
-    <nav className="fixed top-0 w-full z-10 bg-white shadow-md border-b border-gray-200 px-4 py-2 lg:px-8 lg:py-4">
-      <div className="max-w-screen-xl mx-auto flex items-center justify-between ">
-        <button onClick={handleToggleSide}>
-          <i className="bi bi-menu-button"></i>
-        </button>
-        <NavLink to="/dashboard" className="cursor-pointer py-1.5 font-medium">
-          Dexterdmonkey
-        </NavLink>
+    <nav className="sticky top-0 w-full z-10 bg-white shadow-md border-b border-gray-200 pr-2 pl-0 py-2 lg:px-8 lg:py-4">
+      <div className="max-w-screen-xl mx-1 flex items-center justify-between ">
+        <div>
+          <button className="mx-2" onClick={handleToggleSide}>
+            <i className="bi bi-menu-button"></i>
+          </button>
+          <NavLink
+            to="/dashboard"
+            className="cursor-pointer py-1.5 font-medium"
+          >
+            Dexterdmonkey
+          </NavLink>
+        </div>
         <div className="flex items-center gap-4">
           <div className="hidden lg:block">{navList}</div>
           <div>
