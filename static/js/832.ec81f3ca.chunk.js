@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkportfolio=self.webpackChunkportfolio||[]).push([[832],{832:(r,s,e)=>{e.r(s),e.d(s,{default:()=>d});e(43);var n=e(216),o=e(579);const d=()=>{const r=(0,n.g)().id;return r?(0,o.jsxs)("div",{children:[(0,o.jsx)("h1",{children:"User Page"}),(0,o.jsxs)("p",{children:["ID: ",r]})]}):(0,o.jsx)("div",{children:"Error: ID not found"})}}}]);
-//# sourceMappingURL=832.ec81f3ca.chunk.js.map
