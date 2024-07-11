@@ -22,8 +22,8 @@ const SidebarComponent: React.FC = () => {
               </NavLink>
             </li>
             <li>
-              <NavLink to="/dashboard/pokemon/category" className="font-normal">
-                Pokemon Category
+              <NavLink to="/dashboard/pokemon/type" className="font-normal">
+                Pokemon Type
               </NavLink>
             </li>
           </ul>

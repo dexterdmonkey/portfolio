@@ -1,8 +1,10 @@
+import PokemonDetailPage from "pages/PokemonDetailPage";
+import PokemonTypesPage from "pages/PokemonTypesPage";
 import React, { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 
 const DashboardPage = React.lazy(() => import("pages/DashboardPage"));
-const UserPage = React.lazy(() => import("pages/UserPages"));
+const PokemonListPage = React.lazy(() => import("pages/PokemonListPage"));
 const SidebarComponent = React.lazy(
   () => import("components/SidebarComponent")
 );
@@ -24,7 +26,9 @@ const Routers: React.FC = () => {
           <DashboardNavbarComponent onSideOpenChange={handleSideOpenChange} />
           <Routes>
             <Route path="/" element={<DashboardPage />} />
-            <Route path="/pokemon/:id" element={<UserPage />} />
+            <Route path="/pokemon" element={<PokemonListPage />} />
+            <Route path="/pokemon/type" element={<PokemonTypesPage />} />
+            <Route path="/pokemon/:id" element={<PokemonDetailPage />} />
           </Routes>
         </div>
       </div>
